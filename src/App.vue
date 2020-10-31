@@ -48,7 +48,7 @@ export default {
   },
   methods: {
     createNew() {
-      axios.get('https://plg-backend.herokuapp.com/api/v2/process/randomize')
+      axios.get(this.$plgBackend.getUrlProcessRandomize())
           .then(res => {
             this.processes = [...this.processes, res.data];
             this.$toastr.s('New process created!');
@@ -56,7 +56,7 @@ export default {
           .catch(err => console.error(err));
     },
     checkStatus() {
-        axios.get('https://plg-backend.herokuapp.com/api/v2/system/ping')
+        axios.get(this.$plgBackend.getUrlPing())
             .then(res => this.systemStatus = (res.data == 'pong' ? "online" : "offline"))
             .catch(err => console.error(err));
     }

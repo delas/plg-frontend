@@ -9,7 +9,10 @@
                     <b-dropdown-item>Export .tpn</b-dropdown-item>
                     <b-dropdown-item>Export .svg</b-dropdown-item>
                 </b-dropdown>
-                <b-button variant="outline-secondary" v-b-modal.stream-cofiguration size="sm">
+                <b-button
+                    :disabled="this.streaming"
+                    variant="outline-secondary"
+                    v-b-modal.stream-cofiguration size="sm">
                     <font-awesome-icon icon="play-circle" />
                     Simulate <small>(for 5 minutes)</small></b-button>
              </b-button-group>
@@ -33,7 +36,8 @@ export default {
             process: {
                 name: ""
             },
-            dot: null
+            dot: null,
+            streaming: true
         }
     },
     components: {
@@ -53,6 +57,7 @@ export default {
                 if (matches.length == 1) {
                     this.process = matches[0];
                     this.renderProcess();
+                    this.checkStreaming();
                 } else {
                     this.$router.push("/");
                 }
@@ -60,8 +65,14 @@ export default {
         },
         renderProcess() {
             this.dot = null;
-            axios.post("https://plg-backend.herokuapp.com/api/v2/process/plg2dot", this.process)
+            axios.post(this.$plgBackend.getUrlProcessPlg2Dot(), this.process)
                 .then(res =>  this.dot = res.data)
+                .catch(err => console.error(err));
+        },
+        checkStreaming() {
+            this.streaming = true
+            axios.get(this.$plgBackend.getUrlStreamerStatus(this.process.id))
+                .then(res => this.streaming = res.data)
                 .catch(err => console.error(err));
         }
     }

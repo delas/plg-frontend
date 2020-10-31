@@ -25,6 +25,10 @@ Vue.use(VueToastr, {
   }
 });
 
+// backend service
+import PlgBackend from './services/PlgBackend.js';
+Vue.prototype.$plgBackend = new PlgBackend();
+
 // ---
 
 Vue.config.productionTip = false

@@ -2,9 +2,12 @@
     <footer class="mb-1 mx-3 small" style="position: fixed; bottom: 0;">
         <p>
             <font-awesome-icon icon="circle" v-bind:class=" this.systemStatus " />
-            <!-- <i class="fa fa-circle"  -->
-            <!-- v-bind:class=" this.systemOnline ? 'online' : 'offline' "></i> -->
-            System status: {{ this.systemStatus }}</p>
+            System status: {{ this.systemStatus }}<br>
+            <small class="text-secondary">
+                <font-awesome-icon icon="server" class="mr-1" />
+                {{ this.$plgBackend.getHostname() }}
+            </small>
+            </p>
     </footer>
 </template>
 

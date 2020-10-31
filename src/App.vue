@@ -12,7 +12,7 @@
               class="ml-3"
               variant="outline-secondary"
               @click="createNew"
-              :class="{'disabled' : this.systemStatus != 'online'}">Create new process</b-button>
+              :disabled="this.systemStatus != 'online'">Create new process</b-button>
             
             <h6
               class="sidebar-heading justify-content-between align-items-center px-3 mt-4 mb-1 text-muted"

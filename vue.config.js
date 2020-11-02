@@ -1,2 +1,4 @@
-module.exports = { };
+module.exports = {
+  publicPath: '/plg/'
+};
   

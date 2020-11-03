@@ -75,7 +75,7 @@ export default {
       this.checkStatus();
       setInterval(() => {
           this.checkStatus();
-      }, 1000 * 5); // check again every minute
+      }, 1000 * 30); // check again every 30 seconds
   }
 }
 </script>

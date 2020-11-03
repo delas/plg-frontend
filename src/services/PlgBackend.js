@@ -1,5 +1,6 @@
 export default class PlgBackend {
     constructor() {
+        this.urls = require('../assets/backend-hosts.json');
         this.url = "";
         this.getRandomURL();
     }
@@ -10,12 +11,7 @@ export default class PlgBackend {
     }
 
     getAllURLs() {
-        return [
-            {protocol: "https", hostname: "plg-backend-eu1.herokuapp.com"},
-            {protocol: "https", hostname: "plg-backend-eu2.herokuapp.com"},
-            {protocol: "https", hostname: "plg-backend-us1.herokuapp.com"},
-            {protocol: "https", hostname: "plg-backend-us2.herokuapp.com"},
-        ];
+        return this.urls;
     }
 
     getHostname() {

@@ -3,7 +3,7 @@
     <b-navbar toggleable="lg" type="dark" variant="dark" sticky class="flex-md-nowrap p-0 shadow">
       <b-navbar-brand href="#" class="col-md-3 col-lg-2 mr-0 px-3">PLG Web</b-navbar-brand>
       <b-navbar-nav class="ml-auto">
-        <b-nav-item href="#">About</b-nav-item>
+        <b-nav-item :to="{ name: 'About' }">About</b-nav-item>
       </b-navbar-nav>
     </b-navbar>
 

@@ -7,7 +7,6 @@
             :to="{ name: 'ProcessView', params: { id: proc.process.id }}">
             <font-awesome-icon icon="file" />
             Process {{ proc.process.name }}
-            {{proc.streaming}}
             <font-awesome-icon icon="play-circle" class="float-right" :class="{ invisible: !proc.streaming}" />
         </b-list-group-item>
     </div>

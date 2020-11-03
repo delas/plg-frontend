@@ -55,9 +55,10 @@ export default {
     methods: {
         fetchData() {
             if ('id' in this.$route.params) {
-                const matches = this.processes.filter(p => p.id == this.$route.params.id);
+                const matches = this.processes.filter(p => p.process.id == this.$route.params.id);
                 if (matches.length == 1) {
-                    this.process = matches[0];
+                    this.process = matches[0].process;
+                    this.streaming = matches[0].streaming;
                     this.renderProcess();
                     this.checkStreaming();
                 } else {

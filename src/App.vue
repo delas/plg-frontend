@@ -50,7 +50,7 @@ export default {
     createNew() {
       axios.get(this.$plgBackend.getUrlProcessRandomize())
           .then(res => {
-            this.processes = [...this.processes, res.data];
+            this.processes = [...this.processes, {process: res.data, streaming: false}];
             this.$toastr.s('New process created!');
           })
           .catch(err => console.error(err));
@@ -59,13 +59,23 @@ export default {
         axios.get(this.$plgBackend.getUrlPing())
             .then(res => this.systemStatus = (res.data == 'pong' ? "online" : "offline"))
             .catch(err => console.error(err));
+
+        for(var i = 0; i < this.processes.length; i++) {
+          var _this = this;
+          var _i = i;
+          axios.get(this.$plgBackend.getUrlStreamerStatus(_this.processes[_i].process.id), {data: {index: _i}})
+                .then(res => {
+                  _this.processes[JSON.parse(res.config.data).index].streaming = res.data;
+                })
+                .catch(err => console.error(err));
+        }
     }
   },
   mounted() {
       this.checkStatus();
       setInterval(() => {
           this.checkStatus();
-      }, 1000 * 60); // check again every minute
+      }, 1000 * 5); // check again every minute
   }
 }
 </script>

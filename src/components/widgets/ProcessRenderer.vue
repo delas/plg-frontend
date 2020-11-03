@@ -32,7 +32,7 @@ export default {
                     .then(element => this.svg = element.outerHTML)
                     .catch(error => console.log(error));
             }
-        },
+        }
     },
 };
 </script>
@@ -41,5 +41,4 @@ export default {
 .loading {
 	background: url('../../assets/loader.svg') center center no-repeat !important;
 }
-
 </style>

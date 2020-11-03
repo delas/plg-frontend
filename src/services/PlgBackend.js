@@ -42,6 +42,18 @@ export default class PlgBackend {
         return this.getUrl() + "/api/v2/process/plg2dot";
     }
 
+    getUrlProcessPlg2Bpmn() {
+        return this.getUrl() + "/api/v2/process/plg2bpmn";
+    }
+
+    getUrlProcessPlg2Tpn() {
+        return this.getUrl() + "/api/v2/process/plg2tpn";
+    }
+
+    getUrlProcessPlg2Pnml() {
+        return this.getUrl() + "/api/v2/process/plg2pnml";
+    }
+
     getUrlStreamerStatus(processId) {
         return this.getUrl() + "/api/v2/streamer/status/" + processId;
     }

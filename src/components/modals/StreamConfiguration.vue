@@ -46,6 +46,7 @@ export default {
                 .then(res => {
                     if (res.data === true) {
                         this.$toastr.s('Stream started!');
+                        this.$emit('start-stream', this.process.id)
                     } else {
                         this.$toastr.e('Stream cannot be started (maybe it is already running?)');
                     }

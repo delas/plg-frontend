@@ -21,7 +21,10 @@
 
         </div>
         <ProcessRenderer ref="dot" :dot="this.dot" />
-        <StreamConfiguration :defaultName="this.process.name" :process="this.process" />
+        <StreamConfiguration
+            :defaultName="this.process.name"
+            :process="this.process"
+            @start-stream="$emit('start-stream', $event)" />
     </div>
 </template>
 

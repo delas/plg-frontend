@@ -23,7 +23,7 @@
           </div>
         </nav>
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4 pt-3">
-          <router-view :processes="processes" />
+          <router-view :processes="processes" @start-stream="streamStarted" />
         </main>
       </b-row>
     </b-container>
@@ -69,13 +69,16 @@ export default {
                 })
                 .catch(err => console.error(err));
         }
+    },
+    streamStarted(id) {
+      this.processes.find(el => el.process.id == id).streaming = true;
     }
   },
   mounted() {
       this.checkStatus();
       setInterval(() => {
           this.checkStatus();
-      }, 1000 * 30); // check again every 30 seconds
+      }, 1000 * 15); // check again every few seconds
   }
 }
 </script>

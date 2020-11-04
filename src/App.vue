@@ -1,7 +1,8 @@
 <template>
   <div id="app">
-    <b-navbar toggleable="lg" type="dark" variant="dark" sticky class="flex-md-nowrap p-0 shadow">
+    <b-navbar toggleable="lg" type="dark" variant="dark" sticky class="flex-md-nowrap shadow">
       <b-navbar-brand href="#" class="col-md-3 col-lg-2 mr-0 px-3">PLG Web</b-navbar-brand>
+      
       <b-navbar-nav class="ml-auto">
         <b-nav-item :to="{ name: 'About' }">About</b-nav-item>
       </b-navbar-nav>
@@ -9,18 +10,18 @@
 
     <b-container fluid>
       <b-row>
-        <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+        <nav class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse border-right p-0">
           <div class="sidebar-sticky pt-3">
             <b-button
               class="ml-3"
               variant="outline-secondary"
               @click="createNew"
-              :disabled="this.systemStatus != 'online'">Create new process</b-button>
+              :disabled="this.systemStatus != 'online'">New Process</b-button>
             
             <h6
               class="sidebar-heading justify-content-between align-items-center px-3 mt-4 mb-1 text-muted"
               :class="this.processes.length > 0 ? 'd-flex' : 'd-none'">
-              Generated Processes</h6>
+              Processes</h6>
             <ProcessesList v-bind:processes="processes" />
             <SystemStatus v-bind:systemStatus="systemStatus" />
           </div>
@@ -92,10 +93,7 @@ body {
 }
 
 .sidebar-sticky {
-  position: relative;
-  top: 0;
   height: calc(100vh - 40px);
-  overflow-x: hidden;
-  overflow-y: auto;
 }
+
 </style>

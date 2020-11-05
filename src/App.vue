@@ -93,7 +93,7 @@ body {
 }
 
 .sidebar-sticky {
-  height: calc(100vh - 40px);
+  height: calc(100vh - 56px);
 }
 
 </style>

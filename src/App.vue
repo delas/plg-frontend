@@ -93,10 +93,6 @@ export default {
 </script>
 
 <style>
-body {
-  font-size: .875rem;
-}
-
 .sidebar-sticky {
   height: calc(100vh - 56px);
 }

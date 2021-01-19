@@ -12,7 +12,7 @@
         <p>The software makes use of the following libraries:</p>
         <ul>
             <li><code>libPlg</code> and <code>libPlgSream</code>, available at <a href="https://github.com/delas/plg" target="_blank">https://github.com/delas/plg</a></li>
-            <li><code>mqtt-xes</code>, available at <a href="https://github.com/pmcep/mqtt-xes" target="_blank">https://github.com/pmcep/mqtt-xes</a></li>
+            <li><code>mqtt-xes</code>, available at <a href="https://github.com/beamline/mqtt-xes" target="_blank">https://github.com/beamline/mqtt-xes</a></li>
         </ul>
         <p>The source code of this web-application is available at:</p>
         <ul>

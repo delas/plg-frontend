@@ -1,11 +1,16 @@
 <template>
   <div id="app">
-    <b-navbar toggleable="lg" type="dark" variant="dark" sticky class="flex-md-nowrap shadow">
-      <b-navbar-brand href="#" class="col-md-3 col-lg-2 mr-0 px-3">PLG Web</b-navbar-brand>
-      
-      <b-navbar-nav class="ml-auto">
-        <b-nav-item :to="{ name: 'About' }">About</b-nav-item>
-      </b-navbar-nav>
+    <b-navbar toggleable="lg" type="dark" variant="dark" class="shadow">
+      <b-navbar-brand href="#">
+         <img src="@/assets/dtu.png" class="d-inline-block align-top" alt="DTU" height="30" />
+        PLG Web
+      </b-navbar-brand>
+      <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+      <b-collapse id="nav-collapse" is-nav>
+        <b-navbar-nav class="ml-auto">
+          <b-nav-item :to="{ name: 'About' }">About</b-nav-item>
+        </b-navbar-nav>
+      </b-collapse>
     </b-navbar>
 
     <b-container fluid>

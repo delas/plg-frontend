@@ -1,4 +1,4 @@
 module.exports = {
-  publicPath: '/plg/'
+  publicPath: '/plg-frontend/'
 };
   

@@ -21,9 +21,7 @@
 <script>
 import Viz from "viz.js";
 import workerURL from 'file-loader!viz.js/full.render.js';
-// import svgPanZoom from 'svg-pan-zoom';
 import SvgPanZoom from "vue-svg-pan-zoom";
-
 
 export default {
     props: ["dot"],

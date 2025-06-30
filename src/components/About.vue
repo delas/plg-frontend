@@ -16,10 +16,10 @@
         </ul>
         <p>The source code of this web-application is available at:</p>
         <ul>
-            <li>Backend: <a href="https://github.com/delas/plg-backend" target="_blank">https://github.com/delas/plg-backend</a></li>
-            <li>Frontend: <a href="https://github.com/delas/plg-frontend" target="_blank">https://github.com/delas/plg-frontend</a></li>
+            <li>Backend: <a href="https://github.com/dtu-pm/plg-backend" target="_blank">https://github.com/dtu-pm/plg-backend</a></li>
+            <li>Frontend: <a href="https://github.com/dtu-pm/plg-frontend" target="_blank">https://github.com/dtu-pm/plg-frontend</a></li>
         </ul>
-        <p>The documentation for the backend is available as <a href="https://editor.swagger.io/?url=https://raw.githubusercontent.com/delas/plg-backend/master/api-documentation.yaml" target="_blank">Swagger YAML file</a>.
+        <p>The documentation for the backend is available as <a href="https://editor.swagger.io/?url=https://raw.githubusercontent.com/dtu-pm/plg-backend/master/api-documentation.yaml" target="_blank">Swagger YAML file</a>.
             The API are currently hosted at Heroku, and the frontend randomly connects to one of them. To use the API these hosts can currently be used:</p>
         <ul>
             <li v-bind:key="h.hostname"
